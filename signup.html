@@ -1,20 +1,87 @@
 <html>
     <body>
-        <center><form name="frm1" action="#" method="GET">
+        <style>
+            form {
+	width: 30em;
+}
+
+div {
+	margin: .10em;
+}
+
+label {
+	display: inline-block;
+	width: 10em;
+}
+
+input {
+	width: 12em;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Validation Styles */
+
+input:valid {
+  background-color: #BBFFF0;
+}
+
+.check-ok {
+  color: lime;
+}
+
+input:invalid ~ .check-ok {
+  display: none;
+}
+
+input:valid ~ .check-ok {
+  display: inline;
+}
+</style>
+        <center><form name="frm1" action="#" method="POST">
+             
             FORMULARIO DE REGISTRO:<br><br>
-            <div>NOMBRES: <input type="text" name="NOMBRES: "><br><br>
-            APELLIDOS:<input type="text" name="APELLIDOS: "><br><br>
-            NUMERO DE ID:<input type="text" name="NUMERO DE ID: "><br><br>
-            GENERO: <INPUT type="radio" name="estado" value="Soltero">Masculino
-                    <INPUT type="radio" name="estado" value="Casado" checked>Femenino<BR>
-            CELULAR:<input type="text" name="CELULAR: "><br><br>
-            DEPARTAMENTO DE NACIMIENTO: <input type="text" name="DEPARTAMENTO DE NACIMIENTO: "><br><br>
-            CIUDAD DE NACIMIENTO: <input type="text" name="CIUDAD DE NACIMIENTO: "><br><br>
-            CORREO ELECTRONICO: <input type="text" name="CORREO ELECTRONICO: "><br><br>
-            CONTRASEÑA: <input type="text" name="CONTRASEÑA: "><br><br>
-            CONFIRMAR CONTRASEÑA: <input type="text" name="CONFIRMAR CONTRASEÑA: "><br><br>
-            FOTO: <input type="text" name="FOTO: "><br><br>
-            TIPO DE INDENTIFICACIÓN: <input type="text" name="TIPO DE IDENTIFICACIÓN: "><br><br></div>
+
+            <div><label for="nombre"> NOMBRES: <input type="text" name="NOMBRES: " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required></div><br><br>
+              <i class="fa fa-check check-ok"></i>
+            <div>APELLIDOS:<input type="text" name="APELLIDOS: " pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br></div>
+            <div>NUMERO DE ID: <input type="text" name="NUMERO DE IDENTIFICACIÓN: " pattern="[0-9]{7,12}" title="Sólo se aceptan NUMEROS"><br><br></div>
+            CELULAR:<input type="text" name="NUMERO DE IDENTIFICACIÓN: " pattern="[0-9]{7,12}" title="Sólo se aceptan NUMEROS"><br><br>
+            GENERO: 
+                <INPUT type="radio" name="estado" value="Soltero">Masculino
+                <INPUT type="radio" name="estado" value="Casado" checked>Femenino<br><br>
+            DEPARTAMENTO DE NACIMIENTO:
+            <select>
+                <option value="NARIÑO">NARIÑO</option>
+                <option value="CUNDINAMARCA">CUNDINAMARCA</option>
+                <option value="VALLE">VALLE</option>
+                <option value="PUTUMAYO">PUTUMAYO</option>
+                <name="DEPARTAMENTO DE NACIMIENTO:"></name>
+            </select><br><br>
+            CIUDAD DE NACIMIENTO: 
+            <select>
+                <option value="PASTO">PASTO</option>
+                <option value="BOGOTA">BOGOTA</option>
+                <option value="CALI">CALI</option>
+                <option value="MOCOA">MOCOA</option>
+                <name> "CIUDAD DE NACIMIENTO:" </name>
+            </select><br><br>
+            CORREO ELECTRONICO: <input type="email" name="correo" id="correo" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" required/></div><br><br>
+            CONTRASEÑA: <input type="password" name="pass" id="pass" pattern="[A-Za-z0-9!?-]{8,12}" required/><br><br>
+            CONFIRMAR CONTRASEÑA: <input type="password" name="pass" id="pass" pattern="[A-Za-z0-9!?-]{8,12}" required/><br><br>
+            FOTO: <input type="text" name="direccion archivo"><input type="file" name="archivo_foto"><br><br>
+            TIPO DE INDENTIFICACIÓN: 
+            <select>
+                <option value="CC">CEDULA DE CIUDADANIA</option>
+                <option value="CE">CEDULA DE EXTRANGERIA</option>
+                <option value="TI">TARJETA DE IDENTIDAD</option>
+                <option value="RC">REGISTRO CIVIL</option>
+                <name> "CIUDAD DE NACIMIENTO:" </name>
+            </select><br><br>
+            <br><br></div>
             
             <input type="submit" value="REGISTRARME">
                 
